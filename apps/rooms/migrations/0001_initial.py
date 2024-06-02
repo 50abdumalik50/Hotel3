@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('users', '0001_initial'),
+        ('auth', '0001_initial'),
     ]
 
     operations = [
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('check_in_date', models.DateField()),
                 ('check_out_date', models.DateField()),
                 ('date_of_reservation', models.DateField(default=django.utils.timezone.now)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to='users.user')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to='auth.user')),
                 ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to='rooms.room')),
             ],
         ),

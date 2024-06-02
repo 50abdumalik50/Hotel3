@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.contrib.auth import get_user_model
 from utils.image_path import upload_rooms
 
-# from apps.users.models import User
+# from apps.auth.models import User
 User = get_user_model()
 
 

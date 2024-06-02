@@ -2,11 +2,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.swagger import docs
 
 
 api_urlpatterns = [
     path('rooms/', include('apps.rooms.api.urls')),
     path('comments/', include('apps.comments.api.urls')),
+    path('restaurants/', include('apps.restaurants.api.urls')),
+    path('docs/', docs.with_ui('swagger', cache_timeout=0), name="docs"),
+    # path('api-auth/', include('rest_framework.urls')),
 ]
 
 urlpatterns = [

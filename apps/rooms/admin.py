@@ -11,7 +11,7 @@ admin.site.register(Booking)
 #     extra = 1
 #
 #
-# @admin.register(RoomImage)
+# @admin.register.html(RoomImage)
 # class RoomImageAdmin(admin.ModelAdmin):
 #     list_display = ['image']
 

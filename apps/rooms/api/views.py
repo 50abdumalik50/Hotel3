@@ -5,11 +5,13 @@ from rest_framework.reverse import reverse
 
 from apps.rooms.api.serializers import RoomSerializer, RoomCreateSerializer, BookingSerializer, BookingCreateSerializer
 from apps.rooms.models import Room, Booking
+from utils.permissions import IsAdmin
 
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+    permission_classes = [IsAdmin]
 
 
 def get_serializer_class(self):
