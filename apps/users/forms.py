@@ -1,6 +1,6 @@
-# from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+# from django.contrib.users.forms import UserCreationForm, UserChangeForm
 # from django import forms
-# from django.contrib.auth import get_user_model
+# from django.contrib.users import get_user_model
 #
 #
 # User = get_user_model()
@@ -53,18 +53,18 @@ class UserCreationForm(UserCreationForm):
 
 
 class UserUpdateForm(UserChangeForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'first_name', 'last_name']
-        help_texts = {
-            'username': 'Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'
-        }
-        labels = {
-            'username': 'Username',
-            'email': 'Email Address',
-            'first_name': 'First Name',
-            'last_name': 'Last Name'
-        }
+        class Meta:
+            model = User
+            fields = ['username', 'email', 'first_name', 'last_name']
+            help_texts = {
+                'username': 'Обязательно. 150 символов или меньше. Только буквы, цифры и @/./+/-/_.'
+            }
+            labels = {
+                'username': 'Имя пользователя',
+                'email': 'Адрес электронной почты',
+                'first_name': 'Имя',
+                'last_name': 'Фамилия'
+            }
 
 
 class UserDetailForm(forms.ModelForm):
@@ -76,6 +76,5 @@ class UserDeleteForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
-
 
 

@@ -1,6 +1,6 @@
 # from django.urls import path
 #
-# from apps.auth.views import UserCreateView
+# from apps.users.views import UserCreateView
 #
 # urlpatterns = [
 #     path('register.html/', UserCreateView.as_view(), name='register.html'),
@@ -15,15 +15,15 @@ from apps.users.views import (
 )
 
 urlpatterns = [
-    path('auth/register/', RegisterView.as_view(), name='register'),
+    path('register/', RegisterView.as_view(), name='register'),
     path('', HomeView.as_view(), name='home'),
-    path('auth/login/', LoginView.as_view(template_name='auth/login.html'), name='login'),
-    path('auth/profile/', UserProfileView.as_view(), name='user_profile'),
-    path('auth/logout/', logout_view, name='logout'),
-    path('users/list/', UserCreateView.as_view(), name='user_list'),
-    path('users/detail/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
-    path('users/update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
-    path('users/delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),
+    path('login/', LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('profile/', UserProfileView.as_view(), name='user_profile'),
+    path('logout/', logout_view, name='logout'),
+    path('user/list/', UserCreateView.as_view(), name='user_list'),
+    path('user/detail/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
+    path('user/update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
+    path('user/delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),
 ]
 
 

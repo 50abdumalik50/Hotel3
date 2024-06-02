@@ -10,7 +10,7 @@ api_urlpatterns = [
     path('comments/', include('apps.comments.api.urls')),
     path('restaurants/', include('apps.restaurants.api.urls')),
     path('docs/', docs.with_ui('swagger', cache_timeout=0), name="docs"),
-    # path('api-auth/', include('rest_framework.urls')),
+    # path('api-users/', include('rest_framework.urls')),
 ]
 
 urlpatterns = [
